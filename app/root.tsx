@@ -10,6 +10,7 @@ import {
 
 import type { Route } from "./+types/root";
 import stylesheet from "./app.css?url";
+import { i } from "node_modules/vite/dist/node/types.d-aGj9QkWt";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -42,7 +43,11 @@ export function Layout({ children }: { children: React.ReactNode }) {
             </Link>
           </div>
           <div className="navbar-center">
-            <Link to="/articles/page/0" className="btn btn-ghost text-md">
+            <Link
+              to="/articles/page/0"
+              relative="path"
+              className="btn btn-ghost text-md"
+            >
               記事一覧
             </Link>
           </div>

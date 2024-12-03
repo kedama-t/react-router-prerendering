@@ -3,13 +3,27 @@ import fs from "node:fs";
 import path from "node:path";
 
 export default {
-  basename: "/react-router-pre-rendering",
+  basename: "/react-router-pre-rendering/",
+
   buildEnd: () => {
     // ./build/clientを./docsにコピー
     if (fs.existsSync("./docs")) {
       fs.rmdirSync("./docs", { recursive: true });
     }
     fs.renameSync("./build/client", "./docs");
+    // /react-router-pre-rendering/ディレクトリの中身を/docsに移動
+    fs.readdirSync("./docs/react-router-pre-rendering", {
+      withFileTypes: true,
+    }).forEach((file) => {
+      fs.renameSync(
+        `./docs/react-router-pre-rendering/${file.name}`,
+        `./docs/${file.name}`,
+      );
+    });
+
+    if (fs.existsSync("./docs/react-router-pre-rendering")) {
+      fs.rmdirSync("./docs/react-router-pre-rendering", { recursive: true });
+    }
   },
   async prerender({ getStaticPaths }) {
     // _index.tsxなど、静的ルート
