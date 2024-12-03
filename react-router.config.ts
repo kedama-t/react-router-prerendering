@@ -3,6 +3,7 @@ import fs from "node:fs";
 import path from "node:path";
 
 export default {
+  basename: "/react-router-pre-rendering",
   buildEnd: () => {
     // ./build/clientを./docsにコピー
     if (fs.existsSync("./docs")) {
