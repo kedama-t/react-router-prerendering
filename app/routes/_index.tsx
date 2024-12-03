@@ -1,13 +1,14 @@
-import type { Route } from "./+types/home";
-import { Welcome } from "../welcome/welcome";
-
-export function meta({}: Route.MetaArgs) {
-  return [
-    { title: "New React Router App" },
-    { name: "description", content: "Welcome to React Router!" },
-  ];
-}
+export const meta = () => {
+  return [{ title: 'React-Routerブログ | トップページ' }];
+};
 
 export default function Home() {
-  return <Welcome />;
+  return (
+    <>
+      <p>
+        <a href="https://reactrouter.com/">React Router</a>
+        のプリレンダリング機能を使った静的ブログサイトのサンプルです
+      </p>
+    </>
+  );
 }
