@@ -1,14 +1,14 @@
-import matter from 'gray-matter';
-import { Link, type LoaderFunctionArgs, useLoaderData } from 'react-router';
-import { listContents } from '~/util/loadMarkdown';
+import matter from "gray-matter";
+import { Link, type LoaderFunctionArgs, useLoaderData } from "react-router";
+import { listContents } from "~/util/loadMarkdown";
 
 export const meta = () => {
-  return [{ title: 'React-Routerブログ | 記事一覧' }];
+  return [{ title: "React-Routerブログ | 記事一覧" }];
 };
 
 export const loader = async (args: LoaderFunctionArgs) => {
   const page = Number(args.params.page);
-  const { contents, hasNext } = listContents('./articles', page);
+  const { contents, hasNext } = listContents("./articles", page);
   const articles = contents.map((article) => {
     const { content, data } = matter(article.content);
     return { url: article.url, content, data };

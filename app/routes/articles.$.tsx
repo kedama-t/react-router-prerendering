@@ -2,11 +2,11 @@ import {
   type LoaderFunctionArgs,
   type MetaFunction,
   useLoaderData,
-} from 'react-router';
-import matter from 'gray-matter';
-import Markdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
-import { loadContent } from '~/util/loadMarkdown';
+} from "react-router";
+import matter from "gray-matter";
+import Markdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+import { loadContent } from "~/util/loadMarkdown";
 
 export const meta: MetaFunction<typeof loader> = ({ data: loaderData }) => {
   return [
@@ -16,8 +16,8 @@ export const meta: MetaFunction<typeof loader> = ({ data: loaderData }) => {
 };
 
 export const loader = async (args: LoaderFunctionArgs) => {
-  const path = args.params['*'] as string;
-  const mdContent = loadContent('./articles', path);
+  const path = args.params["*"] as string;
+  const mdContent = loadContent("./articles", path);
   const { content, data } = matter(mdContent);
   return { url: path, content, data };
 };

@@ -1,5 +1,5 @@
 export const meta = () => {
-  return [{ title: 'React-Routerブログ | トップページ' }];
+  return [{ title: "React-Routerブログ | トップページ" }];
 };
 
 export default function Home() {
