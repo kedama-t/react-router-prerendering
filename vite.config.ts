@@ -5,7 +5,7 @@ import { defineConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig({
-  base: "/react-router-pre-rendering/",
+  base: "./",
   css: {
     postcss: {
       plugins: [tailwindcss, autoprefixer],
