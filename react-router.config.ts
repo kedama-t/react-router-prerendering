@@ -3,7 +3,7 @@ import fs from "node:fs";
 import path from "node:path";
 
 export default {
-  basename: "/react-router-pre-rendering/",
+  basename: "/react-router-prerendering/",
 
   buildEnd: () => {
     // ./build/clientを./docsにコピー
@@ -12,17 +12,17 @@ export default {
     }
     fs.renameSync("./build/client", "./docs");
     // /react-router-pre-rendering/ディレクトリの中身を/docsに移動
-    fs.readdirSync("./docs/react-router-pre-rendering", {
+    fs.readdirSync("./docs/react-router-prerendering", {
       withFileTypes: true,
     }).forEach((file) => {
       fs.renameSync(
-        `./docs/react-router-pre-rendering/${file.name}`,
+        `./docs/react-router-prerendering/${file.name}`,
         `./docs/${file.name}`,
       );
     });
 
-    if (fs.existsSync("./docs/react-router-pre-rendering")) {
-      fs.rmdirSync("./docs/react-router-pre-rendering", { recursive: true });
+    if (fs.existsSync("./docs/react-router-prerendering")) {
+      fs.rmdirSync("./docs/react-router-prerendering", { recursive: true });
     }
     // .nojekyllファイルを作成
     fs.writeFileSync("./docs/.nojekyll", "");
