@@ -1,0 +1,1 @@
+import{w as e}from"./with-props-Qx3btUFu.js";import{l as t}from"./chunk-7R3XDUXW-Db4GcVzY.js";const s=()=>[{title:"React-Routerブログ | トップページ"}],a=e(function(){return t.jsx(t.Fragment,{children:t.jsxs("p",{children:[t.jsx("a",{href:"https://reactrouter.com/",children:"React Router"}),"のプリレンダリング機能を使った静的ブログサイトのサンプルです"]})})});export{a as default,s as meta};
