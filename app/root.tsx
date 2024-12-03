@@ -51,6 +51,14 @@ export function Layout({ children }: { children: React.ReactNode }) {
               記事一覧
             </Link>
           </div>
+          <div className="navbar-end">
+            <a
+              href="https://github.com/kedama-t/react-router-prerendering"
+              className="btn btn-ghost text-md"
+            >
+              GitHub
+            </a>
+          </div>
         </header>
         {children}
         <ScrollRestoration />
