@@ -24,6 +24,8 @@ export default {
     if (fs.existsSync("./docs/react-router-pre-rendering")) {
       fs.rmdirSync("./docs/react-router-pre-rendering", { recursive: true });
     }
+    // .nojekyllファイルを作成
+    fs.writeFileSync("./docs/.nojekyll", "");
   },
   async prerender({ getStaticPaths }) {
     // _index.tsxなど、静的ルート
